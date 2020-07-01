@@ -1,6 +1,6 @@
 # Employee Tracker
 
-![alt text](https://img.shields.io/badge/license-MIT-green)
+![alt text](https://img.shields.io/badge/license-none-green)
 
 ## Description
  To view and manage the departments, roles, and employees in acompany to organize and plan business.

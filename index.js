@@ -151,6 +151,7 @@ const connection = mysql.createConnection({
     }).then()
   }
 
+  //function to view all roles
   const viewAllRoles = () =>{
     return new Promise((resolve,reject)=>{
      connection.query("SELECT * FROM role", (err,data)=>{
@@ -164,6 +165,7 @@ const connection = mysql.createConnection({
  })
 }
 
+//function to view all employees
 const viewAllEmployees = () =>{
     return new Promise((resolve,reject)=>{
      connection.query("SELECT employee.id,employee.first_name,employee.last_name,employee.role_id,employee.manager_id,role.title,role.salary,department1.department FROM employee LEFT JOIN role ON employee.role_id = role.id LEFT JOIN department1 ON role.department_id=department1.id", (err,data)=>{
@@ -177,7 +179,7 @@ const viewAllEmployees = () =>{
  })
 }
 
-
+//function to add department
 const deptMenu = ()=>{
     inquirer.prompt({
         type:"prompt",
@@ -192,8 +194,6 @@ const deptMenu = ()=>{
         
     })
 }
-
-
 
 
 const addDepartment = (addDept)=>{
@@ -213,7 +213,7 @@ const addDepartment = (addDept)=>{
 }
 
 
-
+//function to add role
 const roleMenu = ()=>{
     inquirer.prompt([{
         type:"prompt",
@@ -257,6 +257,7 @@ const addRole = (add_title,add_salary,add_dept_id)=>{
 }
 
 
+//function to add employee
 const employeeMenu = ()=>{
     inquirer.prompt([{
         type:"prompt",
@@ -410,6 +411,7 @@ const deleteEmployee = (employee_id)=>{
     })
 }
 
+//function to update the employee role
 const updateEmployeeRole = (employeeId)=>{
     return new Promise((resolve,reject)=>{
     viewAllRoles().then(allRoles=>{
