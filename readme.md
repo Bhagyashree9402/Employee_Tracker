@@ -21,7 +21,7 @@ npm install inquirer mysql console.table
 User can add and delete employee,role,department and also can update employee role and employee manager based on the specific id enrolled to each employee.
 
 ## License
-MIT
+none
 
 ## Contribution
 Single Contributor
