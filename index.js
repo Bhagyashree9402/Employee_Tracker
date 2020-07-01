@@ -455,6 +455,7 @@ connection.query("UPDATE employee SET ? WHERE ?",
 })
 }
 
+//function to update the employee manager
 const updateEmployeeManager1 = (employeeId)=>{
     return new Promise((resolve,reject)=>{
     viewAllEmployees().then(allEmployee=>{
