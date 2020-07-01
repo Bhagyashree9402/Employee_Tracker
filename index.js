@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const inquirer = require("inquirer");
 const cTable = require("console.table");
 
+//connection to mysql
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -17,6 +18,7 @@ const connection = mysql.createConnection({
     mainMenu();
 });
 
+//function to track the employees        
     const mainMenu = () =>{
         inquirer.prompt({
             type:"list",
@@ -135,6 +137,7 @@ const connection = mysql.createConnection({
         })
     }
 
+    //function to view all departments
    const viewAllDepartments = () =>{
        return new Promise((resolve,reject)=>{
         connection.query("SELECT * FROM department1", (err,data)=>{
